@@ -1,0 +1,75 @@
+There's been a murder in Terminal City, and TCPD needs your help.
+
+To figure out whodunit, go to the 'mystery' subdirectory and start working from there.
+
+You'll want to start by collecting all the clues at the crime scene (the 'crimescene' file).
+
+The officers on the scene are pretty meticulous, so they've written down EVERYTHING in their officer reports.
+
+Fortunately the sergeant went through and marked the real clues with the word "CLUE" in all caps.
+
+If you get stuck, open one of the hint files (from the CL, type 'cat hint1', 'cat hint2', etc.).
+
+To check your answer or find out the solution, open the file 'solution' (from the CL, type 'cat solution').
+
+To get started on how to use the command line, open cheatsheet.md or cheatsheet.pdf (from the command line, you can type 'nano cheatsheet.md').
+
+
+jls@jls-ThinkPad-S2:~/Dokumente/Lede/foundations/Homework/clmystery-master$ grep -r CLUE
+mystery/crimescene:CLUE: Footage from an ATM security camera is blurry but shows that the perpetrator is a tall male, at least 6'.
+mystery/crimescene:CLUE: Found a wallet believed to belong to the killer: no ID, just loose change, and membership cards for AAA, Delta SkyMiles, the local library, and the Museum of Bash History. The cards are totally untraceable and have no name, for some reason.
+mystery/crimescene:CLUE: Questioned the barista at the local coffee shop. He said a woman left right before they heard the shots. The name on her latte was Annabel, she had blond spiky hair and a New Zealand accent.
+
+grep Annabel people
+Annabel Sun	F	26	Hart Place, line 40
+SEE INTERVIEW #47246024
+
+Oluwasegun Annabel	M	37	Mattapan Street, line 173
+Annabel Church	F	38	Buckingham Place, line 179
+SEE INTERVIEW #699607
+
+Annabel Fuglsang	M	40	Haley Street, line 176
+
+cat interview-699607
+Interviewed Ms. Church at 2:04 pm.  Witness stated that she did not see anyone she could identify as the shooter, that she ran away as soon as the shots were fired.
+
+However, she reports seeing the car that fled the scene.  Describes it as a blue Honda, with a license plate that starts with "L337" and ends with "9"
+
+
+grep -A 5 L337 vehicles | grep -A 4 Honda | grep -A 3 Blue
+Color: Blue
+Owner: Erika Owens
+Height: 6'5"
+Weight: 220 lbs
+--
+Color: Blue
+Owner: Aron Pilhofer
+Height: 5'3"
+Weight: 198 lbs
+--
+Color: Blue
+Owner: Heather Billings
+Height: 5'2"
+Weight: 244 lbs
+--
+Color: Blue
+Owner: Joe Germuska
+Height: 6'2"
+Weight: 164 lbs
+--
+Color: Blue
+Owner: Jeremy Bowers
+Height: 6'1"
+Weight: 204 lbs
+--
+Color: Blue
+Owner: Jacqui Maher
+Height: 6'2"
+Weight: 130 lbs
+
+
+grep -r Bowers
+Museum_of_Bash_History:Jeremy Bowers
+Terminal_City_Library:Jeremy Bowers
+Delta_SkyMiles:Jeremy Bowers
+AAA:Jeremy Bowers

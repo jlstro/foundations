@@ -1,0 +1,21 @@
+tail -n +3 OSHA\ fatalities\ FY2017.csv | wc -l
+396
+
+grep explosion OSHA\ fatalities\ FY2017.csv | wc -l
+9
+
+grep 2017 OSHA\ fatalities\ FY2017.csv > 2017accidents.csv && wc -l 2017accidents.csv
+120
+
+head -n 1 2017accidents.csv
+
+grep forklift OSHA\ fatalities\ FY2017.csv > forklift_accidents.csv && wc -l forklift_accidents.csv
+12
+
+grep 12/24/ OSHA\ fatalities\ FY2017.csv > xmas_accidents && wc -l xmas_accidents
+2
+
+grep " tree" OSHA\ fatalities\ FY2017.csv > tree_accidents.txt
+
+
+CLI murder case: It was Jeremy Bowers - I'm gonna get you, Jeremy!
