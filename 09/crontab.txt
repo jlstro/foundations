@@ -1,0 +1,10 @@
+# just a nyt front page peek
+* * * * * python3 'nytimes scraper.py'
+# the 'weather alert' is a bit more now, it gives me some news, exchange rates, the weather and event tipps.
+0 8 * * * python3 weather_alert.py
+*/20 * * * * python3 reddit-frontpage-scraper.py 
+# This command sends me a daily reddit summary e-mail by analysing the csv's I scraped over the day  
+59 23 * * * python3 reddit_send.py
+#This command moves the reddit data to an archive
+5 0 * * * mv ~/reddit/*.csv ~/reddit/reddit_archiv/
+
